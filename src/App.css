@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+.App{
+  height: 100vh;
+ display: grid;
+ grid-template-columns: 200px 1fr;
+ grid-template-rows: 50px 1fr;
+ grid-template-areas: 
+ 'side header'
+ 'side main'
+ ;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+  background-color: rgb(79, 172, 79);
+  grid-area: header;
+  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.sidebar{
+  background-color: rgb(74, 136, 136);
+  grid-area: side;
+}
+.main{
+  background-color: rgb(62, 62, 153);
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 10px;
+  gap: 10px;
+  grid-template-areas: 
+  'box1 box2 box3'
+  'box4 box4 box5'
+  'box4 box4 box6'
+  ;
+}
+.box1{
+  background-color: brown;
+  grid-area: box1;
+}
+.box2 {
+  background-color: rgb(17, 112, 30);
+  grid-area: box2;
+}
+.box3 {
+  background-color: rgb(55, 21, 109);
+  grid-area: box3;
+}
+.box4 {
+  background-color: rgb(66, 14, 51);
+  grid-area: box4;
+}
+.box5 {
+  background-color: rgb(24, 97, 116);
+  grid-area: box5;
+}
+.box6 {
+  background-color: rgb(165, 42, 128);
+  grid-area: box6;
+}
+ .one{
+  border-radius: 10px;
+}
+@media screen and (max-width:925px) {
+  .main{
+    grid-template-columns: 1fr;
+    overflow: scroll;
+    grid-template-rows: 200px 200px 200px 600px 200px 200px;
+    /* grid-template-rows: repeat(6, 200px); */
+    grid-template-areas: initial !important;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .box1{
+    grid-area: initial !important;
   }
-  to {
-    transform: rotate(360deg);
+  .box2{
+    grid-area: initial !important;
   }
+    .box3 {
+      grid-area: initial !important;
+    }
+    .box4 {
+      grid-area: initial !important;
+    }
+    .box5 {
+      grid-area: initial !important;
+    }
+        .box6 {
+          grid-area: initial !important;
+        }
 }
